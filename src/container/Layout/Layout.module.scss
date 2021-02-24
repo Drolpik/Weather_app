@@ -1,0 +1,28 @@
+@import "../../styles/variables.scss";
+
+.Container {
+  @include FlexCenterAll();
+  height: 100vh;
+
+  .Tab {
+    background-color: $TabColor;
+    width: 50vw;
+    height: 60vh;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px 1px $TabShadowColor;
+
+    .Header {
+      input {
+        border: none;
+        border-radius: 3vw;
+        background-color: $SearchBarColor;
+        width: 60%;
+        padding: 10px;
+        font-size: large;
+        text-align: center;
+        outline: none;
+      }
+      margin-bottom: 5%;
+    }
+  }
+}

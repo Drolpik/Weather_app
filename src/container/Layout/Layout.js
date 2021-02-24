@@ -4,6 +4,7 @@ import Results from '../../components/Results/Results';
 import axios from 'axios';
 import 'weather-icons/css/weather-icons.css';
 import {URL, apiKey} from '../../api/config';
+import classes from './Layout.module.scss';
 
 class Layout extends Component {
     state = {
@@ -91,22 +92,28 @@ class Layout extends Component {
     render() {
 
         return(
-            <>
-                <Logo />
-                <input 
-                    type="text" 
-                    placeholder="Enter your city name" 
-                    onChange={this.setSearchValueHandler} 
-                    value={this.state.searchValue} 
-                    onKeyDown={this.searchValueHandler} >
-                </input>
-                <Results 
-                    city={this.state.city} 
-                    temp_main={this.state.temp_main} 
-                    description={this.state.description} 
-                    weatherIcon={this.state.icon} >
-                </Results>
-            </>
+            <div className={classes.Container}>
+                <div className={classes.Tab}>
+                    <div className={classes.Header}>
+                        <Logo />
+                        <input 
+                            type="text" 
+                            placeholder="Enter your city name" 
+                            onChange={this.setSearchValueHandler} 
+                            value={this.state.searchValue} 
+                            onKeyDown={this.searchValueHandler} >
+                        </input>
+                    </div>
+                    <Results 
+                        city={this.state.city} 
+                        temp_main={this.state.temp_main} 
+                        temp_min={this.state.temp_min}
+                        temp_max={this.state.temp_max}
+                        description={this.state.description} 
+                        weatherIcon={this.state.icon} >
+                    </Results>
+                </div>
+            </div>
         );
     }
 }
