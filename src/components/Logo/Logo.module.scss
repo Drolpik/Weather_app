@@ -1,7 +1,12 @@
+@import "../../styles/variables.scss";
+
 .Container {
   margin: 20px 0;
 
   h2:first-of-type {
     font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-shadow: $textShadow;
   }
 }

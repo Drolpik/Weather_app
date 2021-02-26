@@ -16,8 +16,7 @@ const results = (props) => (
                 <span>{celsiusConverter(props.temp_min)}</span>
                 <span>{celsiusConverter(props.temp_max)}</span>
             </h3>
-        </div>
-        
+        </div>  
         <h4>{props.description}</h4>
         
     </div>

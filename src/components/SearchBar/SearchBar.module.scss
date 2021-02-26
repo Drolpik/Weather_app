@@ -1,0 +1,20 @@
+@import "../../styles/variables.scss";
+
+.SearchBar {
+  input {
+    border: none;
+    border-radius: 3vw;
+    background-color: $SearchBarColor;
+    width: 60%;
+    padding: 10px;
+    font-size: 0.7rem;
+    text-align: center;
+    outline: none;
+    box-shadow: 0 4px $SearchBarShadowColor;
+    transition: background-color 0.4s ease;
+
+    &:focus {
+      background-color: $SearchBarFocusColor;
+    }
+  }
+}

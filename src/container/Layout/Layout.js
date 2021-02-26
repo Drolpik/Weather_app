@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Logo from '../../components/Logo/Logo';
+import SearchBar from '../../components/SearchBar/SearchBar';
 import Results from '../../components/Results/Results';
 import axios from 'axios';
 import 'weather-icons/css/weather-icons.css';
@@ -92,17 +93,16 @@ class Layout extends Component {
     render() {
 
         return(
-            <div className={classes.Container}>
+            <>
+                <div className={classes.Background}></div>
                 <div className={classes.Tab}>
                     <div className={classes.Header}>
                         <Logo />
-                        <input 
-                            type="text" 
-                            placeholder="Enter your city name" 
+                        <SearchBar
                             onChange={this.setSearchValueHandler} 
                             value={this.state.searchValue} 
                             onKeyDown={this.searchValueHandler} >
-                        </input>
+                        </SearchBar>
                     </div>
                     <Results 
                         city={this.state.city} 
@@ -113,7 +113,7 @@ class Layout extends Component {
                         weatherIcon={this.state.icon} >
                     </Results>
                 </div>
-            </div>
+            </>
         );
     }
 }
