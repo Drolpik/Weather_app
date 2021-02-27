@@ -6,6 +6,7 @@ import axios from 'axios';
 import 'weather-icons/css/weather-icons.css';
 import {URL, apiKey} from '../../api/config';
 import classes from './Layout.module.scss';
+import ScaleLoader from 'react-spinners/ScaleLoader';
 
 class Layout extends Component {
     state = {
@@ -15,6 +16,7 @@ class Layout extends Component {
         temp_min: null,
         description: '',
         searchValue: '',
+        showLoading: false,
     }
 
     weatherIcon = {
@@ -60,6 +62,7 @@ class Layout extends Component {
     }
 
     getWeatherData = async (cityName) => {
+        this.setState({showLoading: true});
         await axios.get(URL + `q=${cityName}&appid=${apiKey}`)
             .then((response) => {
                 this.setState({
@@ -71,6 +74,9 @@ class Layout extends Component {
                 });
                 this.getWeatherIcon(this.weatherIcon, response.data.weather[0].id);
                 console.log(response.data);
+                setTimeout(() => {
+                    this.setState({showLoading: false});
+                }, 1000);
             })
             .catch((error) => {
                 console.log(error);
@@ -91,6 +97,18 @@ class Layout extends Component {
     }
     
     render() {
+        let results = <Results 
+            city={this.state.city} 
+            temp_main={this.state.temp_main} 
+            temp_min={this.state.temp_min}
+            temp_max={this.state.temp_max}
+            description={this.state.description} 
+            weatherIcon={this.state.icon} >
+        </Results>;
+
+        if(this.state.showLoading) {
+            results = <ScaleLoader color={'#3a431099'} />
+        }
 
         return(
             <>
@@ -104,14 +122,7 @@ class Layout extends Component {
                             onKeyDown={this.searchValueHandler} >
                         </SearchBar>
                     </div>
-                    <Results 
-                        city={this.state.city} 
-                        temp_main={this.state.temp_main} 
-                        temp_min={this.state.temp_min}
-                        temp_max={this.state.temp_max}
-                        description={this.state.description} 
-                        weatherIcon={this.state.icon} >
-                    </Results>
+                    {results}
                 </div>
             </>
         );
