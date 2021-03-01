@@ -1,32 +1,41 @@
 @import "../../styles/variables.scss";
 
 .Container {
-  h1 {
+  @include FlexCenterAll();
+  flex-flow: column;
+  background-color: $TabColor;
+  width: 50%;
+  height: 60%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 50px 1px $TabShadowColor;
+
+  .CityName {
     font-size: 1.5rem;
     letter-spacing: 1px;
-    margin-bottom: 25px;
+    margin: 5% 0;
   }
 
   .Icon {
     font-size: 100px;
-    margin: 20px 0;
+    margin: 5% 0;
   }
 
-  .TempContent {
-    margin: 25px 0;
-    font-size: 0.8rem;
-    line-height: 0.5em;
+  .TempMain {
+    font-size: 1.5rem;
+  }
 
-    .MinMax {
-      & > span {
-        padding: 0 20px;
-        font-size: 0.7rem;
-      }
+  .MinMax {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 2%;
+
+    & > span {
+      padding: 0 20px;
     }
   }
 
-  h4 {
+  .Description {
     font-weight: 400;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 }

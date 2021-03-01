@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Logo from '../../components/Logo/Logo';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import Results from '../../components/Results/Results';
 import axios from 'axios';
@@ -80,6 +79,7 @@ class Layout extends Component {
             })
             .catch((error) => {
                 console.log(error);
+                //this.setState({showLoading: false});
             });
     }
     
@@ -111,20 +111,14 @@ class Layout extends Component {
         }
 
         return(
-            <>
-                <div className={classes.Background}></div>
-                <div className={classes.Tab}>
-                    <div className={classes.Header}>
-                        <Logo />
-                        <SearchBar
-                            onChange={this.setSearchValueHandler} 
-                            value={this.state.searchValue} 
-                            onKeyDown={this.searchValueHandler} >
-                        </SearchBar>
-                    </div>
-                    {results}
-                </div>
-            </>
+            <div className={classes.Container}>
+                <SearchBar
+                    onChange={this.setSearchValueHandler} 
+                    value={this.state.searchValue} 
+                    onKeyDown={this.searchValueHandler} >
+                </SearchBar>
+                {results}
+            </div>
         );
     }
 }

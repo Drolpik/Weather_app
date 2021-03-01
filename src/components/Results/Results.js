@@ -7,18 +7,15 @@ const celsiusConverter = (temp) => {
 
 const results = (props) => (
     <div className={classes.Container}>
-        <h1>{props.city}</h1>
+        <h1 className={classes.CityName}>{props.city}</h1>
         <i className={[`wi ${props.weatherIcon}`, classes.Icon].join(' ')}></i>
 
-        <div className={classes.TempContent}>
-            <h1>{celsiusConverter(props.temp_main)}</h1>
-            <h3 className={classes.MinMax}>
-                <span>{celsiusConverter(props.temp_min)}</span>
-                <span>{celsiusConverter(props.temp_max)}</span>
-            </h3>
-        </div>  
-        <h4>{props.description}</h4>
-        
+        <h1 className={classes.TempMain}>{celsiusConverter(props.temp_main)}</h1>
+        <h3 className={classes.MinMax}>
+            <span>{celsiusConverter(props.temp_min)}</span>
+            <span>{celsiusConverter(props.temp_max)}</span>
+        </h3>
+        <h4 className={classes.Description}>{props.description}</h4>
     </div>
 );
 

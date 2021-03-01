@@ -14,3 +14,19 @@ $textShadow: 2px 0.5px rgba(58, 67, 16, 0.2);
     justify-content: center;
     align-items: center;
 }
+
+// Media-queries
+// mobile devices
+$breakpoint-mobileMin: 320px;
+$breakpoint-mobileMax: 480px;
+// iPads, Tablets
+$breakpoint-tabletMin: 481px;
+$breakpoint-tabletMax: 768px;
+// Small screens, laptops
+$breakpoint-laptopMin: 769px;
+$breakpoint-laptopMax: 1024px;
+// Desktops, large screens
+$breakpoint-desktopMin: 1025px;
+$breakpoint-desktopMax: 1200px;
+// Extra large screens
+$breakpont-LargeDesktop: 1201px;
