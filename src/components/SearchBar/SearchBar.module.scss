@@ -5,6 +5,8 @@
   border-radius: 10px;
   background-color: $SearchBarColor;
   width: 30%;
+  max-width: 350px;
+  min-width: 170px;
   padding: 0.5%;
   margin-bottom: 2vh;
   font-size: 0.7rem;

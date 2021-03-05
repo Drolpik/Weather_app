@@ -6,13 +6,17 @@
   background-color: $TabColor;
   width: 50%;
   height: 60%;
+  max-width: 500px;
+  max-height: 720px;
+  min-width: 200px;
+  min-height: 300px;
   border-radius: 10px;
   box-shadow: 0px 0px 50px 1px $TabShadowColor;
 
   .CityName {
     font-size: 1.5rem;
     letter-spacing: 1px;
-    margin: 5% 0;
+    margin-top: 5%;
   }
 
   .Icon {
@@ -37,5 +41,10 @@
   .Description {
     font-weight: 400;
     font-size: 0.8rem;
+    padding-bottom: 25px;
+  }
+
+  @media (orientation: landscape) {
+    min-height: 320px;
   }
 }
