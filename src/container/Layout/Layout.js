@@ -72,14 +72,12 @@ class Layout extends Component {
                     description: response.data.weather[0].description
                 });
                 this.getWeatherIcon(this.weatherIcon, response.data.weather[0].id);
-                console.log(response.data);
                 setTimeout(() => {
                     this.setState({showLoading: false});
                 }, 1000);
             })
             .catch((error) => {
                 console.log(error);
-                //this.setState({showLoading: false});
             });
     }
     
@@ -107,7 +105,7 @@ class Layout extends Component {
         </Results>;
 
         if(this.state.showLoading) {
-            results = <ScaleLoader color={'#3a431099'} />
+            results = <ScaleLoader color={'#ffffffb3'} />
         }
 
         return(
