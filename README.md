@@ -9,7 +9,6 @@ Simple weather app that uses the <a href="https://openweathermap.org/api">OpenWe
 
 ## Technologies
 * React
-* SASS
-* JavaScript
+* SCSS
 
 <strong>lang:</strong> ENG
